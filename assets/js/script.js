@@ -104,9 +104,10 @@ function questionHandler () {
     questionArea.appendChild(choiceBtn3);  
     questionArea.appendChild(choiceBtn4);   
     
-   
+   //function needed to record the value of a clicked button to a variable. 
 
-        // if(){};
+   //function needed to compare recorded value of clicked button to innerText of [i] question.answer. If values are equal, add 10 points to score. If values are not equeal, deduct 5 seconds from timer
+  
     };
      
 
