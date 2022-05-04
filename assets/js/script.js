@@ -1,35 +1,56 @@
 var timerEl = document.querySelector('#timer');
 var questionArea = document.querySelector('#question-area');
 var score = 0;
-var questions = [{
+var scoreEl = document.getElementById('score');
+let questionIndex;
+var questions = document.getElementById('questions');
+var questionsArray = [
+    {
     question: 'Inside which HTML element does JavaScript go?',
-    choices: ['<script>','<p>', '<scripting>', '<header>'],
-    answer: '<script>'
+    choice1 : '<script>',
+    choice2 : '<p>',
+    choice3 : '<scripting>',
+    choice4 : '<header>',
+    answer: '<script>',
 },
 
 {
     question: 'How do you write "Hello World" in an alert box?',
-    choices: ['msg("Hello World!")', 'alertBox("Hello World!")', 'alert("Hello World!")', 'console.log("Hello World!")'],
+    choice1:'msg("Hello World!")',
+    choice2:'alertBox("Hello World!")', 
+    choice3:'alert("Hello World!")',
+    choice4: 'console.log("Hello World!")',
     answer: 'alert("Hello World!")'
 },
 {
     question: 'How do you create a function in JavaScript',
-    choices: ['function:myFunction()','function myFunction()', 'function= myFunction()'],
+    choice1: 'function:myFunction()',
+    choice2:'function myFunction()', 
+    choice3:'function= myFunction()',
     answer:'function myFunction()'
 },
 {
     question: 'How to write an IF statement in JavaScript?',
-    choices: ['if (i == 5)','if i = 5 then', 'if i == 5 then', 'if i = 5'],
+    choice1:'if (i == 5)',
+    choice2: 'if i = 5 then', 
+    choice3:'if i == 5 then', 
+    choice4:'if i = 5',
     answer:'if (i == 5)'
 },
 {
     question: 'How do you round the number 7.25, to the nearest integer?',
-    choices: ['Math.round(7.25)','round(7.25)', 'Math.rnd(7.25)', 'rnd(7.25)'],
+    choice1:'Math.round(7.25)',
+    choice2:'round(7.25)', 
+    choice3:'Math.rnd(7.25)', 
+    choice4:'rnd(7.25)',
     answer:'Math.round(7.25)'
 },
 {
     question: 'How do you declare a JavaScript variable?',
-    choices: ['variable carName;', 'v carName;', 'var carName;'],
+    choice1: 'variable carName;', 
+    choice2:'v carName;',
+    choice3: 'var carName;',
+    choice4: 'v: carName',
     answer:'var carName;'
 },
 
@@ -51,8 +72,44 @@ function startQuiz() {
 };
 
 function questionHandler () {
+    //loop that displays each question
+
+    for(let i = 0; i< questionsArray.length; i++) {
+
+    //populate question template
     questionArea.innerHTML = '';
-    questionArea.createElement
+    var questionText = document.createElement('h2');
+        questionText.innerText = questionsArray[i].question;
+
+    var choiceBtn1 = document.createElement('button');
+        choiceBtn1.className = 'choice1 btn btn-primary';
+        choiceBtn1.setAttribute =  ('id', 'choice-btn-1');
+        choiceBtn1.innerText = questionsArray[i].choice1;
+    var choiceBtn2 = document.createElement('button');
+        choiceBtn2.className = 'choice2 btn btn-primary';
+        choiceBtn2.setAttribute =  ('id', 'choice-btn-2');
+        choiceBtn2.innerText = questionsArray[i].choice2;
+    var choiceBtn3 = document.createElement('button');
+        choiceBtn3.className = 'choice3 btn btn-primary';
+        choiceBtn3.setAttribute =  ('id', 'choice-btn-3');
+        choiceBtn3.innerHTML = questionsArray[i].choice3;
+    var choiceBtn4 = document.createElement('button');
+        choiceBtn4.className = 'choice4 btn btn-primary';
+        choiceBtn4.setAttribute =  ('id', 'choice-btn-4');
+        choiceBtn4.innerHTML = questionsArray[i].choice4;
+
+    questionArea.appendChild(questionText);  
+    questionArea.appendChild(choiceBtn1);  
+    questionArea.appendChild(choiceBtn2);  
+    questionArea.appendChild(choiceBtn3);  
+    questionArea.appendChild(choiceBtn4);   
+    
+   
+
+        // if(){};
+    };
+     
+
 };
 
 
@@ -74,4 +131,3 @@ function startTimer() {
 
 
 startQuiz();
-console.log(questions[1].choices[2]);

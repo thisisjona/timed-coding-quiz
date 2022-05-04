@@ -17,6 +17,7 @@
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link">High Scores</a></li>
+      <li class="nav-item"><a href="#" class="nav-link" id="score">Score:</a></li>
     </ul>
   </header>
   <main>
@@ -25,10 +26,14 @@
        TEST YOUR KNOWLEDGE
         </div>
         <div class="card-body" id="question-area">
-          <!-- <h5 class="card-title">A QUIZ FOR CODERS</h5>
-          <p class="card-text">You have 3 minutes to finish this quiz! Lose 5 seconds for every wrong answer! Good Luck!</p>
-          <button class="btn btn-primary" id="btn">Begin Quiz</button>
-          <ul class=""></ul> -->
+          <div class="questions d-none" id="questions">
+            <h1 class="question-text">Question Text</h1>
+            <button class="choice1 btn btn-primary"></button>
+            <button class="choice2 btn btn-primary"></button>
+            <button class="choice3 btn btn-primary"></button>
+            <button class="choice4 btn btn-primary"></button>
+          </div>
+      
         </div>
         <div class="card-footer text-muted">
           <p id="timer"></p>
