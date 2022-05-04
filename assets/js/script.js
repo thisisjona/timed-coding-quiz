@@ -109,6 +109,9 @@ function questionHandler () {
    //function needed to compare recorded value of clicked button to innerText of [i] question.answer. If values are equal, add 10 points to score. If values are not equeal, deduct 5 seconds from timer
   
     };
+
+    //handler needed to save scores to localStorage and (json.stringify)
+    //handlre needed to retrieve scores from localStorage and display top 5 scores (json.parse/function)
      
 
 };
